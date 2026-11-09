@@ -5,11 +5,10 @@
 - 재작성 문서의 UTF-8 디코딩·한글 유지·손상 문자·상대 링크 검증을 완료했습니다. 후속 변경 후 다시 검증합니다.
 - 생성 직전 저장소 부재를 재확인하고 사용자 승인으로 빈 Private 저장소를 생성했습니다. README·.gitignore·License 자동 생성은 하지 않았습니다.
 - 로컬 origin 연결과 원격 Private·브랜치 없음 검증을 완료했습니다. 기존 파일·이력을 덮어쓰거나 강제 Push하지 않았습니다.
-- 파일 목록, 인코딩, 민감정보, .gitignore와 실제 상태 일치를 최종 검증합니다.
-- 최초 커밋 및 Push 전 결과와 파일 목록을 제시하고 별도 승인을 받습니다.
-- 초기 커밋 메시지는 `docs: initialize trading automation project`로 합니다.
-- 승인 후 커밋·Push하고 원격 Private 설정, main 브랜치와 커밋 일치를 확인합니다.
-- 실제 결과를 PROJECT_STATUS.md, NEXT_STEPS.md와 CHANGELOG.md에 반영합니다. 원격 반영은 승인 범위를 지킵니다.
+- 13개 파일의 스테이징 내용·인코딩·민감정보·링크·.gitignore 검증을 통과하고 별도 사용자 승인을 받았습니다.
+- `docs: initialize trading automation project` 메시지로 최초 커밋 38c2768을 생성하고 main에 Push했습니다.
+- 원격 Private 설정, 기본 브랜치 main과 로컬·원격 커밋 일치를 확인했습니다. GitHub 초기 구축은 완료입니다.
+- 다음 우선 작업은 P1의 아키텍처 및 개발 환경 설계입니다. 새 컴퓨터에서의 Clone·실행 검증은 아직 하지 않았습니다.
 
 ## P1 — 유튜브 전략 분석 설계 및 개발
 
