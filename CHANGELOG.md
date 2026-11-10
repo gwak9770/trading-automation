@@ -8,7 +8,7 @@
 - GitHub CLI API 원격 main과 로컬 main·origin/main의 4df4bf7 일치, 기존 커밋 6개와 깨끗한 작업 폴더를 작업 시작 시 확인했습니다. 이전 공개 준비 변경은 해당 커밋에 포함되어 있습니다.
 - README.md에 공개 개발 프로젝트임을 반영하고, PROJECT_STATUS.md와 NEXT_STEPS.md의 현재 상태·승인 대기를 갱신했습니다. 기존 Private·승인 대기 기록은 당시 이력으로 보존합니다.
 - AGENTS.md의 보안·AI 활용·테스트 기록 규칙을 유지합니다. 실제 AI 작업은 공개 상태 확인·문서 수정·검증 기록이며 서버·프로그램·매매 성능 검증은 수행하지 않았습니다. 애플리케이션 테스트는 코드와 framework가 없어 실행 대상이 없습니다.
-- 이번 변경의 UTF-8·민감정보·staged diff 검사 결과는 PROJECT_STATUS.md의 최신 검증 기록에 기록합니다. Commit·Push는 변경 내용과 검사 결과에 대한 사용자 승인 대기입니다. 기존 이력 재작성·강제 Push는 수행하지 않았습니다.
+- 이번 변경의 UTF-8·민감정보·staged diff 검사를 통과한 뒤 사용자 승인을 받아 811d8e0 (`docs: record public repository transition`)을 Commit하고 main에 일반 Push했습니다. 새 커밋 포함 전체 이력 7개 Gitleaks 탐지 0건, Push 후 원격·로컬 main·origin/main 일치와 Public·기본 브랜치 main 유지를 확인했습니다. 완료 결과를 상태·다음 단계 문서에 반영했습니다. 기존 이력 재작성·강제 Push는 수행하지 않았습니다.
 - GitHub CLI API 최초 조회는 sandbox 네트워크 제한으로 실패했으며 승인된 재실행으로 원격 main 조회에 성공했습니다.
 
 ### 공개 개발 전 최종 보완

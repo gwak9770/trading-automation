@@ -1,14 +1,12 @@
 # 다음 단계
 
-## 현재 승인 대기 — Public 전환 완료 기록
+## Public 전환 기록 반영 완료
 
-1. 변경 파일·Git diff와 최종 검사 결과를 사용자에게 보고합니다.
-2. 사용자 승인 후 `docs: record public repository transition` 메시지로 Commit합니다.
-3. 새 커밋을 포함한 전체 Git 이력을 Gitleaks로 재검사하고 Push 전 변경 파일·diff를 확인합니다.
-4. Push 직전 원격 main에 새 변경이 있는지 재확인하고, main에 일반 Push한 뒤 로컬 main·origin/main·원격 main 일치와 Public 유지를 확인합니다.
-5. Commit·Push 결과를 보고합니다. Public 전환은 이미 완료되었으며 이번 작업에서 Visibility는 변경하지 않습니다.
+- 변경 내용·검사 결과 보고 후 사용자 승인을 받아 `docs: record public repository transition` 커밋 811d8e0을 생성하고 main에 일반 Push했습니다.
+- 새 커밋 포함 전체 이력 7개의 Gitleaks 탐지 0건과 Push 직전 변경 파일·diff·원격 상태를 확인했습니다.
+- Push 후 로컬 main·origin/main·GitHub API 원격 main의 811d8e0 일치, 깨끗한 작업 폴더 및 Public·기본 브랜치 main 유지를 검증했습니다. 이 결과는 후속 문서 커밋으로 보존합니다.
 
-기존 커밋 6개를 보존합니다. 이력 재작성, 강제 Push, 저장소 삭제·재생성은 하지 않습니다. 이번 문서 변경은 아직 Commit·Push하지 않았습니다.
+기존 커밋 6개를 모두 보존했습니다. 이력 재작성, 강제 Push, 저장소 삭제·재생성 및 Visibility 변경은 수행하지 않았습니다.
 
 이번 문서 변경의 검사 결과와 미검증 범위는 PROJECT_STATUS.md의 최신 검증 기록을 참고합니다. 이전 공개 준비 검사는 당시 결과로 보존합니다.
 
@@ -32,4 +30,4 @@
 - 프로그램 실행·자동 테스트·성능·수익성: 코드와 테스트 환경이 없어 미검증.
 - 서버 생성·접속·운영: 증거가 없어 미검증.
 - AI 서비스·데이터 저장·전략 스키마·구체적 라이브러리: 설계 미확정.
-- 새 커밋·Push 및 이후 동기화·이력 재검사: 사용자 승인 후 수행.
+- 다음 개발 작업은 위 우선순위에 따라 진행하며 구현·테스트·운영의 실제 증거를 구분해 기록합니다.

@@ -7,8 +7,8 @@
 | 기본 문서 및 폴더 | 생성 완료 | Markdown 12개와 .gitignore, 애플리케이션 코드·의존성 명세·빌드 설정·자동 테스트 없음 |
 | GitHub 초기 구축·Public 전환 | 완료·검증됨 | 사용자 전환·접근 확인 보고 후 GitHub 도구로 Public·기본 브랜치 main 재확인, 기존 커밋 6개 보존 |
 | 노트북 작업 환경 | 사용자 확인 완료 | Windows 노트북에서 Git·GitHub CLI·Codex CLI 설치·인증·Clone·실행 완료 |
-| main 동기화 | 직접 검증됨 | 이번 작업 시작 시 로컬 main·origin/main·GitHub API 원격 main이 4df4bf7로 일치, 작업 폴더 깨끗함 |
-| 공개 개발 문서 | 현재 상태 반영 | 공개 준비 커밋 4df4bf7 확인, 이번 Public 전환 기록 변경은 Commit·Push 승인 대기 |
+| main 동기화 | 직접 검증됨 | 사용자 승인 후 문서 커밋 811d8e0 일반 Push 완료, 로컬 main·origin/main·GitHub API 원격 main 일치 확인 |
+| 공개 개발 문서 | 반영·Push 완료 | Public 전환 기록 811d8e0 반영, 이후 완료 결과 기록을 별도 커밋으로 보존 |
 | Python 개발 환경 | 미설정 | 프로젝트 지원 런타임·의존성·포매터·린터·테스트 도구 선정 및 명령 검증 필요 |
 | 유튜브 분석 시스템 | 계획·미구현 | 아키텍처, 영상 목록·자막 수집, AI 전략 추출, Markdown·JSON 스키마 설계 필요 |
 | 네이버 클라우드 서버 | 미검증 | 기존 기록은 미생성. 실제 생성·접속·운영 증거 없음 |
@@ -59,4 +59,5 @@
 - 재현 명령: 이전 임시 도구를 PATH에 추가한 환경에서 `gitleaks git . --log-opts="--all --full-history" --redact --no-banner`, `gitleaks dir . --redact --no-banner`, `gitleaks git . --pre-commit --staged --redact --no-banner`. index 전체 검사는 `git show :경로`의 bytes를 저장소 밖 임시 폴더로 추출해 `gitleaks dir`로 검사했습니다. 추출 파일은 검사 후 자동 정리했습니다.
 - 오류 및 처리: GitHub CLI API 최초 조회의 sandbox 네트워크 제한과 Git index 쓰기 제한은 승인된 재실행으로 해결했습니다. LF→CRLF 안내는 줄바꿈 정규화 경고이며 UTF-8 손상은 확인되지 않았습니다.
 - AI 작업 범위는 공개 상태 확인·문서 수정·검증 기록입니다. 애플리케이션 테스트는 코드·framework가 없어 실행 대상이 없으며 서버·실거래·성능은 미검증입니다.
-- 이번 문서 변경은 스테이징 후 최종 diff 검토 대상이며 Commit·Push는 사용자 승인 대기입니다. 새 커밋 생성 후 이력 재검사와 Push 직전 원격 상태·변경 파일·diff 확인을 수행합니다. Visibility 변경·이력 재작성·강제 Push는 수행하지 않았습니다.
+- 위 검사는 Commit 전 결과입니다. 이후 사용자 승인으로 문서 4개를 811d8e0 (`docs: record public repository transition`)으로 Commit하고 main에 일반 Push했습니다. 새 커밋 포함 전체 이력 7개 Gitleaks 탐지 0건, Push 직전 변경 파일·diff 및 원격 main의 4df4bf7 유지를 확인했습니다.
+- Push 후 GitHub API 원격 main·로컬 main·origin/main의 811d8e0 일치, 깨끗한 작업 폴더 및 Public·기본 브랜치 main 유지를 확인했습니다. 이 완료 결과는 후속 문서 커밋으로 기록합니다. Visibility 변경·이력 재작성·강제 Push는 수행하지 않았습니다.
