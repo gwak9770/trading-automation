@@ -1,22 +1,23 @@
 # 다음 단계
 
-## 현재 승인 대기 — 공개 개발 준비
+## 현재 승인 대기 — Public 전환 완료 기록
 
 1. 변경 파일·Git diff와 최종 검사 결과를 사용자에게 보고합니다.
-2. 사용자 승인 후 `chore: prepare repository for public development` 메시지로 Commit합니다.
+2. 사용자 승인 후 `docs: record public repository transition` 메시지로 Commit합니다.
 3. 새 커밋을 포함한 전체 Git 이력을 Gitleaks로 재검사하고 Push 전 변경 파일·diff를 확인합니다.
-4. main에 일반 Push한 뒤 로컬 main·origin/main·원격 main 일치와 Private 유지를 확인합니다.
-5. 공개 전환 가능 여부를 최종 보고합니다. 이번 작업에서 Visibility는 변경하지 않습니다.
+4. Push 직전 원격 main에 새 변경이 있는지 재확인하고, main에 일반 Push한 뒤 로컬 main·origin/main·원격 main 일치와 Public 유지를 확인합니다.
+5. Commit·Push 결과를 보고합니다. Public 전환은 이미 완료되었으며 이번 작업에서 Visibility는 변경하지 않습니다.
 
-기존 이력 재작성, 강제 Push, 저장소 삭제·재생성은 하지 않습니다. 현재 변경은 아직 Commit·Push하지 않았습니다.
+기존 커밋 6개를 보존합니다. 이력 재작성, 강제 Push, 저장소 삭제·재생성은 하지 않습니다. 이번 문서 변경은 아직 Commit·Push하지 않았습니다.
 
-Commit 전 검사 완료: Markdown 12개 UTF-8·한글·상대 링크, ignore 40개 사례, diff 검사 통과. Gitleaks 전체 이력 5개·작업 파일·index 전체 13개 파일·staged diff 탐지 0건. 자세한 결과와 미검증 범위는 PROJECT_STATUS.md를 참고합니다.
+이번 문서 변경의 검사 결과와 미검증 범위는 PROJECT_STATUS.md의 최신 검증 기록을 참고합니다. 이전 공개 준비 검사는 당시 결과로 보존합니다.
 
 ## 완료한 기반 작업
 
 - GitHub Private 저장소 생성·origin 연결·최초 커밋 및 Push 완료.
 - 사용자 확인: Windows 노트북 Git·GitHub CLI·Codex CLI 설치·인증·Clone·실행 완료.
-- 이번 작업 시작 시 fetch 후 main·origin/main·원격 main이 6242684로 일치하고 기존 커밋 5개를 보존한 상태임을 직접 확인.
+- 공개 준비 변경이 커밋 4df4bf7에 반영되었음을 확인. 이번 작업 시작 시 main·origin/main·GitHub API 원격 main의 4df4bf7 일치와 기존 커밋 6개 보존을 직접 확인.
+- 사용자 확인: GitHub 저장소 Public 전환·정상 접근 완료. 도구 재확인: Public 설정·기본 브랜치 main·main 브랜치 존재.
 - 이전 전체 이력 보안 감사와 부가 GitHub 자료 확인은 사용자 제공 결과, 연결 Projects 없음은 사용자 직접 확인 사항으로 기록.
 
 ## 이후 개발 우선순위
