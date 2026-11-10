@@ -1,0 +1,62 @@
+{
+  "policyName": "infra-provisioner-create",
+  "description": "승인된 영상 분석 서버 생성용. 삭제·반납·IAM 관리·전체 관리 권한 제외.",
+  "permissions": [
+    {
+      "effect": "Allow",
+      "targets": [
+        {
+          "product": "VPC",
+          "actions": [
+            "Change/createVPC",
+            "Change/createSubnet",
+            "View/getVPCList",
+            "View/getVPCDetail",
+            "View/getSubnetList",
+            "View/getSubnetDetail",
+            "View/getNetworkACLList",
+            "View/getNetworkACLDetail",
+            "View/getRouteTableList",
+            "View/getRouteTableDetail"
+          ],
+          "resourceNrns": ["*"]
+        },
+        {
+          "product": "VPCServer",
+          "actions": [
+            "Change/createACG",
+            "Change/setACGConfiguration",
+            "Change/createLoginKey",
+            "Change/createServerInstance",
+            "Change/createPublicIPInstance",
+            "Change/associatePublicIPWithServerInstance",
+            "View/getACGList",
+            "View/getACGDetail",
+            "View/getVPCList",
+            "View/getVPCDetail",
+            "View/getSubnetList",
+            "View/getSubnetDetail",
+            "View/getAvailableSubnetList",
+            "View/getLogInKeyList",
+            "View/getServerInstanceList",
+            "View/getServerInstanceDetail",
+            "View/getNetworkInterfaceList",
+            "View/getNetworkInterfaceDetail",
+            "View/getPlacementGroupList",
+            "View/getPlacementGroupDetail",
+            "View/getBlockStorageInstanceList",
+            "View/getBlockStorageInstanceDetail",
+            "View/getDefaultStorageDetail",
+            "View/getPublicIPInstanceList",
+            "View/getPublicIPDetail",
+            "View/getInitScriptList",
+            "View/getInitScriptDetail",
+            "View/getMemberServerImageList",
+            "View/getAvailableSnapshotList"
+          ],
+          "resourceNrns": ["*"]
+        }
+      ]
+    }
+  ]
+}
