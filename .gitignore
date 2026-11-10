@@ -13,6 +13,9 @@ credentials*
 secrets/
 private/
 config/local.*
+api_keys.json
+token.json
+settings.local.json
 .git-credentials
 .aws/
 .ssh/
@@ -29,6 +32,7 @@ config/local.*
 *.wav
 *.m4a
 data/raw/
+**/analysis/raw/
 downloads/
 logs/
 *.log
@@ -54,3 +58,32 @@ htmlcov/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local databases, journals and database backups (SQL source stays tracked)
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+*.sqlite3-*
+*.db.backup
+*.sqlite.backup
+*.sqlite3.backup
+*.db.gz
+*.sqlite.gz
+*.sqlite3.gz
+*.db.zip
+*.sqlite.zip
+*.sqlite3.zip
+/backups/databases/
+
+# Explicitly public examples and deterministic fixtures; review before adding
+!**/api_keys.example.json
+!**/token.example.json
+!**/settings.local.example.json
+!tests/fixtures/**/*.db
+!tests/fixtures/**/*.sqlite
+!tests/fixtures/**/*.sqlite3
+!data/examples/**/*.db
+!data/examples/**/*.sqlite
+!data/examples/**/*.sqlite3
