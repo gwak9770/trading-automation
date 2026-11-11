@@ -1,5 +1,39 @@
 # 프로젝트 상태
 
+## 2026-11-11 — 다른 컴퓨터 재개를 위한 통합 기록 확정
+
+- 사용자가 다른 컴퓨터에서도 이어가기 위해 통합 문서의 Commit과 원격 보관을 요청했습니다. 문서 8개를 기준 b8e0854 위의 별도 docs 브랜치에서 검토·커밋하고 GitHub main에 일반 Push하는 범위입니다. 아래 Commit 금지·승인 대기는 이 요청 전의 기록입니다.
+- 서버 통합 worktree의 공개 파일 24개를 기존 고정 호스트 키 SSH로 읽고 노트북에서 strict UTF-8·Markdown 14개 한글/손상/상대 링크/충돌 표시·실제 private 값 대조·Gitleaks 8.30.1 검사를 수행해 통과했습니다. 서버에 Gitleaks를 설치한 결과가 아니며 이 도구는 노트북에서 서버 파일의 실제 bytes를 검사했습니다. Commit 직전에는 실제 Git index와 staged diff를 다시 검사합니다.
+- 문서만 바뀌었고 소스는 기존 b8e0854와 같아 테스트를 재실행하지 않습니다. 앞선 서버 Python 3.12.3 검증은 25개 통과·Windows 전용 1개 skip, 노트북 검증은 26개 통과입니다. ACG·SSH·권한·전원·실거래 변경은 없습니다.
+- 원래 서버 main과 노트북의 dirty 작업 폴더는 보존합니다. 다른 컴퓨터에서는 GitHub main을 새로 Clone하거나 깨끗한 사본에서 fast-forward한 뒤 NEXT_STEPS.md와 docs/HANDOFF_2026-11-11.md를 읽습니다. 인증·개인키는 GitHub로 전달되지 않으며 새 기기는 별도 설정이 필요합니다.
+
+## 2026-11-11 — 원격 최신 수신 및 서버 보존 통합
+
+서버에서 원격 main을 fetch해 `b8e0854`를 직접 확인했습니다. 시작 main `fafae05` 대비 고유 커밋 0개·뒤처짐 2개이며 `1de8f6c`와 `b8e0854`를 별도 detached worktree에 반영했습니다. 기존 main의 미커밋 문서 7개와 HEAD·빈 index는 원래 폴더에 그대로 보존했고 저장소 밖 백업의 bytes·SHA256도 확인했습니다. 원래 main은 fast-forward하지 않았으며 최신 통합 검토 위치는 `../trading-automation-main-integration/`입니다. 이번 새 Commit·Push·staging은 없습니다.
+
+노트북 후속 설치 완료는 전달된 설치 문서의 기록입니다. 코드 `1de8f6c`·기준 `b8e0854`의 소스 5개를 HEAD와 대조한 뒤 launcher·Python 모듈 총 4개를 배포했고, 각각의 기존 파일 백업 SHA256·설치 bytes 일치와 상태/입력/인증/공개키/개인키/known_hosts/SSH config 불변을 확인했다고 기록돼 있습니다. 설치 전 소스 dry-run·설치본 dry-run·VerifyOnly는 모두 add=false·remove_count=0이며, provisioning 명시 사용으로 실제 기본 NIC·지정 ACG 조회·TCP·고정 호스트 키의 developer 새 SSH 인증을 통과했다고 보고됐습니다. 서버가 이 배포·접속을 재검증한 것은 아닙니다. 아래 설치 대기 문구는 후속 설치 보고 전 시점입니다.
+
+서버 직접 확인: 인계 폴더 `laptop-install-docs-ef5b3afa1968`의 HANDOFF·manifest·patch를 읽고 patch SHA256 및 문서 4개의 LF 정규화 기준/결과 SHA256을 확인했습니다. 기준 HEAD는 `b8e0854902add8d9d08a718fa6c01a11bc7ded32`입니다. 격리 기준 파일에서는 정방향·역방향 검사를 통과했고 현재 문서는 양방향 check 실패여서 강제 적용 없이 기존 기록에 수동 통합했습니다. 문서 diff 수신·검토 과제는 완료됐으며 노트북 미커밋 설치 기록이 GitHub에 올라갔음을 의미하지 않습니다. 이번에는 문서만 수정해 앱 테스트를 재실행하지 않았습니다.
+
+서버 직접 검사: Python 3.12.3에서 `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p 'test_*.py' -v` 실행, 26개 중 25개 통과·Windows OS byte lock 1개 skip. Windows PowerShell·Ruff 검사는 서버에서 실행하지 않았습니다. 노트북의 Windows 26개·lint·format·PowerShell·문서·민감정보 통과는 전달 기록입니다. 서버 문서 검사 결과와 범위는 [통합 안내](docs/HANDOFF_2026-11-11.md)를 따릅니다.
+
+실제 핫스팟 전환 후 이전 관리 규칙 삭제·전용 ssh-acg 인증 준비·생성용 키 회수 확인은 남았습니다. 분석·주문 앱과 하루 4시간 자동 정지는 미구현입니다. 아래의 과거 소스 미수신·설치 대기·Commit 승인 지시는 현재 실행 지시가 아닙니다.
+
+## 서버 앞선 대조 기록 — 원격 수신 전 시점
+
+다음 추가 기록의 소스 미수신·동기화 대기·21개 테스트 문구는 원격 fetch 전 시점입니다. 최신 수신·26개 테스트 및 설치 전달 상태는 이 문서 상단과 통합 안내를 따릅니다. 11월 10일 기록은 원격에 이미 있어 재적용하지 않았습니다.
+
+## 2026-11-11 — 서버 기록 대조 및 노트북 요약 통합
+
+현재 우선 기록입니다. 아래 11월 10일 승인 대기·Commit 실패·미로그인·staged 보존 문구는 당시 단계의 이력이며 이번 실행 지시가 아닙니다. 이번에는 Commit·Push·staging을 하지 않습니다.
+
+- 서버 직접 확인: 시작 HEAD `fafae055fd0be6eff603a48a9e41986c23e8fdfe` (`docs: finalize NAVER Cloud server setup records`), 작업 트리와 index 변경 없음, 추적 파일 14개. 로컬 커밋 존재만 확인했으며 이번 원격 조회·Push 여부 검증은 하지 않았습니다.
+- 서버 파일 직접 확인: 기존 ChatGPT 로그인·venv·tmux와 IP 변경 복구 기록이 남아 있습니다. 이는 11월 10일 검증 이력이며 오늘 인증·접속을 재검증한 결과가 아닙니다. 기본 소켓 대상으로 `tmux list-sessions`를 실행했지만 소켓 부재 오류가 났습니다. 다른 소켓의 세션 유무는 미확인이고 종료·삭제는 하지 않았습니다.
+- 인계 자료 직접 확인: 홈의 11월 10일 ZIP에는 HANDOFF·manifest·문서 4개용 패치만 있습니다. 오늘 SSH 도구 소스·테스트·의존성 파일은 서버 저장소와 확인한 ZIP에 없습니다. 과거 패치는 재적용하지 않았습니다.
+- 사용자 제공 요약: 노트북에서 보관된 서버 기록을 통합하고 Windows SSH ACG 갱신 도구를 구현·설치·검증했다고 보고했습니다. 서버에서는 소스를 검토하거나 해당 검사를 재실행하지 않았습니다. 상세 동작·검증·제한과 필요한 전달물은 [통합 안내](docs/HANDOFF_2026-11-11.md)를 따릅니다.
+- 완료 범위: 제공 요약의 근거 구분, 기존 서버 기록과 차이 정리, 다음 작업 정리. 최신 노트북 파일의 병합·양쪽 동기화는 자료 미수신으로 미완료입니다. 서버의 애플리케이션·테스트·의존성 도입 상태도 변경하지 않았습니다.
+- 안전 경계: 인증 파일을 열거나 옮기지 않았고 클라우드·ACG·SSH·권한·서버 전원 변경, Windows 도구 설치·실환경 실행, 유료 API·실거래를 하지 않았습니다. 검사 결과와 실행 한계는 통합 안내에 기록합니다.
+
 ## 승인된 Commit·Push 완료 (2026-11-11)
 
 - 사용자 승인 후 검토한 공개 변경 17개를 `1de8f6c` (`feat: refresh managed SSH access for changing public IPs`)로 커밋하고 GitHub main에 일반 Push했습니다. 기준 fafae05의 서버 구축 기록과 기존 이력을 보존했습니다.
