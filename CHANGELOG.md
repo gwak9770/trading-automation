@@ -1,5 +1,11 @@
 # 변경 이력
 
+## 2026-11-11 — 승인된 SSH 도구 변경 Commit·Push 완료
+
+- 사용자 승인으로 공개 파일 17개를 1de8f6c에 커밋하고 기준 fafae05에서 원격 main으로 일반 Push했습니다. Push 직전 변경 목록·diff·원격 기준을 확인했고 Push 후 원격 main·origin/main·검토 HEAD 일치와 clean 작업 폴더를 검증했습니다.
+- Commit 전 전체 index 23개 UTF-8·민감정보·private 값·Markdown 13개 링크·diff와 staged Gitleaks 검사 통과. 새 커밋을 포함한 전체 이력 10개 커밋 Gitleaks 탐지 0건. 기존 코드 검사 결과는 unittest 26개·lint·format·PowerShell parse 통과입니다.
+- 원래 main·미커밋 파일 18개·빈 index를 보존했습니다. 완료 기록은 후속 문서 커밋으로 남기며 설치본 재배포·서버 파일·ACG·인증 변경은 이번에 수행하지 않았습니다.
+
 ## 2026-11-11 — 최신 원격 기준 최종 검토
 
 - 공개 변경 17개 stage, 전체 index 23개 UTF-8·민감정보와 Markdown 13개 상대 링크·diff 검사 통과. Gitleaks 전체 이력 9개 커밋·작업 파일·index 전체·staged diff 탐지 0건. unittest 26개·Ruff lint/format·PowerShell parse 검사 통과. 원래 작업 파일 18개·HEAD·빈 index는 보존됐으며 Commit·Push는 하지 않았습니다.

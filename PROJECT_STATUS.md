@@ -1,5 +1,15 @@
 # 프로젝트 상태
 
+## 승인된 Commit·Push 완료 (2026-11-11)
+
+- 사용자 승인 후 검토한 공개 변경 17개를 `1de8f6c` (`feat: refresh managed SSH access for changing public IPs`)로 커밋하고 GitHub main에 일반 Push했습니다. 기준 fafae05의 서버 구축 기록과 기존 이력을 보존했습니다.
+- Commit 전 승인된 staged diff 해시 일치, 전체 index 23개 UTF-8·민감정보·private 값·Markdown 13개 링크·diff 검사 및 staged Gitleaks 탐지 0건을 재확인했습니다. 새 커밋을 포함한 전체 이력 10개 커밋도 Gitleaks 탐지 0건입니다. 코드 변경이 없어 앞선 unittest 26개·lint·format·PowerShell parse 결과를 유지하며 중복 실행하지 않았습니다.
+- Push 직전 원격 main의 fafae05 유지를 확인했고 Push 후 검토 HEAD·origin/main·GitHub 원격 main의 1de8f6c 일치와 깨끗한 검토 worktree를 확인했습니다. 이 완료 결과는 별도 후속 문서 커밋으로 기록합니다.
+- 원래 main의 HEAD 8d2ddf1·미커밋 파일 18개·빈 index는 그대로 보존했습니다. 원래 dirty main에서 pull하거나 reset·stash·강제 Push·Visibility 변경을 하지 않았습니다. 최신 작업은 별도 검토 worktree를 기준으로 합니다.
+- 남은 작업: 검토본의 노트북 SSH 도구 재설치, 서버의 미커밋 변경 확인 후 원격 변경 통합, 전용 ssh-acg 인증과 생성용 키 회수 확인, 실제 핫스팟 전환·이전 관리 규칙 삭제 시험, 분석 최소 기능 설계·구현. 이번 승인 작업에서는 설치본·서버·ACG·인증을 변경하지 않았습니다.
+
+아래 승인 대기·Commit 미실행 문구는 각 작업 당시 기록이며 이 완료 기록을 우선합니다.
+
 ## 최종 검토·커밋 준비 (2026-11-11)
 
 - 최종 준비 완료: 공개 변경 17개를 검토 worktree index에 stage했습니다. 전체 index 23개 파일의 strict UTF-8·손상 문자·충돌 표시·실제 private 값·민감정보 검사와 Markdown 13개 상대 링크 검사, staged/working diff 검사를 통과했습니다. Gitleaks는 전체 이력 9개 커밋·작업 파일·index 전체 파일·staged diff에서 탐지 0건입니다. unittest 26개·Ruff lint/format·PowerShell parse 검사 통과, Git 작성자 설정도 값 출력 없이 준비 여부만 확인했습니다. 원래 작업 파일 18개·원래 HEAD·원래 빈 index 보존을 재확인했습니다. 탐지 0건은 해당 검사 범위의 결과입니다.
